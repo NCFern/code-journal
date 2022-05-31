@@ -15,8 +15,7 @@ header {
 }
 
 img {
-  width: 400px;
-  height: 400px;
+  width: 100%;
 }
 
 input {
@@ -26,8 +25,9 @@ input {
   border-style: solid;
 }
 
-/* input:focus-visible {
-  border-color: red;
+/*
+input:focus {
+  border-color: chartreuse;
 } */
 
 textarea {
@@ -49,6 +49,7 @@ button {
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column-half {
@@ -81,9 +82,8 @@ button {
   padding-top: 20px;
 }
 
-@media only screen and (min-width: 375px) {
-  .container {
-    flex-wrap: wrap;
-    flex-direction: column;
+/* @media only screen and (min-width: 375px) {
+  .column-half {
+    flex-basis: 100%;
   }
-}
+} */
