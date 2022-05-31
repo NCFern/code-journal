@@ -16,9 +16,31 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-  </header>
+  <header>Code Journal</header>
   <main>
+    <h1>New Entry</h1>
+    <div class="view" data-view="entry-form">
+      <form id="new-entry-form">
+        <label for="input-title">Title</label> <br />
+        <input required
+        name="title"
+        type="text"
+        id="input-title"> <br />
+        <label for="input-photo">Photo URL</label> <br />
+        <input required
+        name="url"
+        type="url"
+        id="input-photo"> <br />
+        <label for="input-notes">Notes</label> <br />
+        <textarea required
+        rows="5"
+        name="notes"
+        id="input-notes"></textarea>
+        <div class="form actions">
+          <button type="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
