@@ -14,11 +14,69 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
+    <div class="container">
+      <div class="column-full">
+        Code Journal
+      </div>
+    </div>
   </header>
   <main>
+    <div data-view="entry-form">
+      <form id="new-entry-form">
+        <div class="container">
+          <div class="row">
+            <div class="column-full">
+              <h1>New Entry</h1>
+            </div>
+            <div class="column-half">
+              <img class="photoPreview" src="images/placeholder-image-square.jpg" alt="image-placeholder">
+            </div>
+            <div class="column-half">
+              <div class="title-padding">
+                <label for="input-title">Title</label> <br />
+              </div>
+              <input required
+              name="title"
+              type="text"
+              class="input-border input-border-style"
+              id="input-title"> <br />
+              <div class="photo-padding">
+                <label for="input-photo">Photo URL</label> <br />
+              </div>
+              <input required
+              name="url"
+              type="url"
+              class="input-border input-border-style"
+              id="input-photo"> <br />
+            </div>
+            <div class="column-full">
+              <div class="notes-padding">
+                <label for="input-notes">Notes</label> <br />
+              </div>
+              <textarea required
+              rows="7"
+              name="notes"
+              id="input-notes"
+              class="textarea-border textarea-border-style"></textarea>
+              <div class="form actions">
+                <div class="align-right button-padding">
+                  <button type="submit">SAVE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
