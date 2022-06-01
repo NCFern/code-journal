@@ -22,52 +22,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>Code Journal</header>
+  <header>
+    <div class="container">
+      <div class="column-full">
+        Code Journal
+      </div>
+    </div>
+  </header>
   <main>
-    <div class="container"> <!--div class container start-->
-      <div class="view" data-view="entry-form"> <!--div class entry start-->
-        <form id="new-entry-form">
-          <div class="row"> <!--div class row start-->
-            <div class="column-full"> <!--div class column header start-->
+    <div data-view="entry-form">
+      <form id="new-entry-form">
+        <div class="container">
+          <div class="row">
+            <div class="column-full">
               <h1>New Entry</h1>
-            </div> <!-- div class column header end-->
-            <div class="column-half"> <!--div class column-half-1 start-->
+            </div>
+            <div class="column-half">
               <img class="photoPreview" src="images/placeholder-image-square.jpg" alt="image-placeholder">
-            </div> <!--div class column-half-1 end-->
-            <div class="column-half"> <!--div class column-half-2 start-->
-              <div class="title-padding"> <!--div class title padding start-->
+            </div>
+            <div class="column-half">
+              <div class="title-padding">
                 <label for="input-title">Title</label> <br />
-              </div><!--div class title padding end-->
+              </div>
               <input required
               name="title"
               type="text"
               id="input-title"> <br />
-              <div class="photo-padding"><!--div class photo padding start-->
+              <div class="photo-padding">
                 <label for="input-photo">Photo URL</label> <br />
-              </div><!--div class photo padding end-->
+              </div>
               <input required
               name="url"
               type="url"
               id="input-photo"> <br />
-            </div> <!--div class column-half-2 end-->
-            <div class="column-full"> <!--div class column-full start-->
-              <div class="notes-padding"> <!--div class notes padding start-->
+            </div>
+            <div class="column-full">
+              <div class="notes-padding">
                 <label for="input-notes">Notes</label> <br />
-              </div> <!--div class notes padding end-->
+              </div>
               <textarea required
               rows="7"
               name="notes"
               id="input-notes"></textarea>
-              <div class="form actions"> <!--div class form actions start-->
-                <div class="align-right button-padding"> <!--div class align right start-->
+              <div class="form actions">
+                <div class="align-right button-padding">
                   <button type="submit">SAVE</button>
-                </div> <!--div class align right end-->
-              </div> <!--div class form actions end-->
-            </div><!--div class column-full end-->
-          </div> <!--div class row end-->
-        </form>
-      </div><!--div class entry end-->
-    </div> <!--div class container end-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

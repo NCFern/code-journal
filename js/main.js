@@ -1,41 +1,38 @@
 /* global data */
 
-// take image from input-photo (url) and show it on photo-preview //
-
-// make querySelector to target the input-photo image //
-// addEventListener to listen for inputs //
-
-// make 2 query selectors to take photo and show it//
-
-var imageInput = document.querySelector('.url');
-var imageOutput = document.querySelector('.photoPreview');
-
-imageInput.addEventListener('input', inputImage);
-imageOutput.addEventListener('input', outputImage);
+// create an entry //
+var $form = document.querySelector('#new-entry-form');
+var $showImage = document.querySelector('.photoPreview');
+var $photoURL = document.querySelector('#input-photo');
 
 function inputImage(event) {
-  if (imageInput.value !== '') {
-    data.push(imageInput.value);
+  if ($photoURL.value !== '') {
+    $showImage.setAttribute('src', $photoURL.value);
+  } else {
+    $showImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   }
-  imageInput.value = '';
-  outputImage();
 }
 
-function outputImage(event) {
-
-}
-
-var entryForm = document.querySelector('#new-entry-form');
-
-function handleEntryForm(event) {
+function saveForm(event) {
   event.preventDefault();
-  // var entryFull = {
-  //   title: entryForm.elements.title.value,
-  //   photoURL: entryForm.elements.url.value,
-  //   notes: entryForm.elements.notes.value
-  // };
-  // console.log('entryFull', entryFull);
-  entryForm.reset();
+  var entryFull = {
+    entryId: data.nextEntryId,
+    title: $form.elements.title.value,
+    photoURL: $form.elements.url.value,
+    notes: $form.elements.notes.value
+  };
+  data.entries.unshift(entryFull);
+  data.nextEntryId++;
+  $form.reset();
 }
 
-entryForm.addEventListener('submit', handleEntryForm);
+$photoURL.addEventListener('input', inputImage);
+$form.addEventListener('submit', saveForm);
+
+/// ///////////////////
+
+// var $previousEntries = localStorage.getItem('javascript-local-storage');
+
+// if (previousEntries !== null) {
+//   data = JSON.parse(previousEntries);
+// }

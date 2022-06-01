@@ -25,10 +25,9 @@ input {
   border-style: solid;
 }
 
-/*
 input:focus {
   border-color: chartreuse;
-} */
+}
 
 textarea {
   width: 100%;
@@ -49,7 +48,6 @@ button {
 
 .row {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .column-half {
@@ -82,8 +80,9 @@ button {
   padding-top: 20px;
 }
 
-/* @media only screen and (min-width: 375px) {
-  .column-half {
-    flex-basis: 100%;
+@media only screen and (min-width: 375px) {
+  .container {
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-} */
+}
