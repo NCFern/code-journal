@@ -5,12 +5,6 @@ var $form = document.querySelector('#new-entry-form');
 var $showImage = document.querySelector('.photoPreview');
 var $photoURL = document.querySelector('#input-photo');
 
-// function inputImage(event) {
-//   $showImage.setAttribute('src', event.target.value);
-// }
-
-// $photoURL.addEventListener('input', inputImage);
-
 function inputImage(event) {
   if ($photoURL.value !== '') {
     $showImage.setAttribute('src', $photoURL.value);
@@ -32,6 +26,7 @@ function saveForm(event) {
   data.entries.unshift(entryFull);
   data.nextEntryId++;
   $form.reset();
+  $showImage.setAttribute('src', 'images/placeholder-image-square.jpg');
 }
 
 $form.addEventListener('submit', saveForm);
