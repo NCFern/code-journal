@@ -50,10 +50,6 @@ button {
   display: flex;
 }
 
-.column-half {
-  width: 50%;
-}
-
 .column-full {
   width: 100%;
 }
@@ -84,5 +80,9 @@ button {
   .container {
     flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  input {
+    height: 42px;
   }
 }
