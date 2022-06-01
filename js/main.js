@@ -1,14 +1,15 @@
 /* global data */
 
-// create an entry //
+// create an entry, show image, and submit form //
 var $form = document.querySelector('#new-entry-form');
 var $showImage = document.querySelector('.photoPreview');
 var $photoURL = document.querySelector('#input-photo');
 
-// $photoURL.addEventListener('input', addImage);
-// function addImage(event) {
+// function inputImage(event) {
 //   $showImage.setAttribute('src', event.target.value);
 // }
+
+// $photoURL.addEventListener('input', inputImage);
 
 function inputImage(event) {
   if ($photoURL.value !== '') {
