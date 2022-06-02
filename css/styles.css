@@ -75,3 +75,14 @@ button {
 .button-padding {
   padding-top: 20px;
 }
+
+/* DOM Tree sectioning */
+
+/* .OHW {
+  width: 100%;
+} */
+
+.row-padding {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

@@ -1,6 +1,6 @@
 /* global data */
 
-// create an entry, show image, and submit form //
+// create an entry: show image and submit form //
 var $form = document.querySelector('#new-entry-form');
 var $showImage = document.querySelector('.photoPreview');
 var $photoURL = document.querySelector('#input-photo');
@@ -30,3 +30,28 @@ function saveForm(event) {
 }
 
 $form.addEventListener('submit', saveForm);
+
+// view an entry: entry to templete //
+// create a DOM tree (look at DOM Creation exercise) //
+
+// function renderEntry(entry) {
+
+//   var $entryList = document.createElement('li');
+//   $entryList.setAttribute('class', 'list');
+
+//   var $entryRow = document.createElement('div');
+//   $entryRow.setAttribute('class', 'row');
+
+//   var $entryColumn = document.createElement('div');
+//   $entryColumn.setAttribute('class', 'column-half');
+
+//   var $entryImage = document.createElement('img');
+//   $entryImage.setAttribute('src', OHW.imageURL);
+
+//   var $entryTitle = document.createElement('h2');
+//   $entryTitle.textContent = OHW.title;
+
+//   var $entryNotes = document.createElement('p');
+//   $entryNotes.textContent = OHW.Notes;
+
+// appendChild material goes here //
