@@ -27,31 +27,61 @@ function saveForm(event) {
   data.nextEntryId++;
   $form.reset();
   $showImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  // new content- can view new entries//
+
+  // var $selectContainer = document.querySelector('ul');
+  // $selectContainer.prepend(renderEntry(data.entries[0]));
+
+  // if (data.entries.length === 1) {
+  //   var $showNoRecord = document.querySelector('set-entries');
+  //   $showNoRecord.className = 'hidden';
+  // }
+  // viewEntries();
 }
 
 $form.addEventListener('submit', saveForm);
 
 // view an entry: entry to templete //
-// create a DOM tree (look at DOM Creation exercise) //
 
-// function renderEntry(entry) {
+function renderEntry(entry) {
 
-//   var $entryList = document.createElement('li');
-//   $entryList.setAttribute('class', 'list');
+  var $entryList = document.createElement('li');
 
-//   var $entryRow = document.createElement('div');
-//   $entryRow.setAttribute('class', 'row');
+  var $entryRow = document.createElement('div');
+  $entryRow.setAttribute('class', 'row');
 
-//   var $entryColumn = document.createElement('div');
-//   $entryColumn.setAttribute('class', 'column-half');
+  var $entryColumn = document.createElement('div');
+  $entryColumn.setAttribute('class', 'column-half');
 
-//   var $entryImage = document.createElement('img');
-//   $entryImage.setAttribute('src', OHW.imageURL);
+  var $entryImage = document.createElement('img');
+  $entryImage.setAttribute('src', entry.imageURL);
 
-//   var $entryTitle = document.createElement('h2');
-//   $entryTitle.textContent = OHW.title;
+  var $entry2Column = document.createElement('div');
+  $entry2Column.setAttribute('class', 'column-2-half');
 
-//   var $entryNotes = document.createElement('p');
-//   $entryNotes.textContent = OHW.Notes;
+  var $entryTitle = document.createElement('h2');
+  $entryTitle.textContent = entry.title;
 
-// appendChild material goes here //
+  var $entryNotes = document.createElement('p');
+  $entryNotes.textContent = entry.Notes;
+
+  $entryList.appendChild($entryRow);
+  $entryRow.appendChild($entryColumn);
+  $entryColumn.appendChild($entryImage);
+  $entryRow.appendChild($entry2Column);
+  $entry2Column.appendChild($entryTitle);
+  $entry2Column.appendChild($entryNotes);
+
+  return $entryList;
+}
+
+function loadDomTree(event) {
+  var $chooseContainer = document.querySelector('.ul');
+  for (var i = 0; data.entries.length; i++) {
+    var $appendEntireEntry = renderEntry(data.entries[i]);
+    $chooseContainer.appendChild($appendEntireEntry);
+  }
+}
+
+window.addEventListener('loadDomContent', loadDomTree);

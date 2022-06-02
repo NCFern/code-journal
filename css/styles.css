@@ -5,13 +5,14 @@ body {
     sans-serif;
 }
 
-header {
+.navi-bar {
   background-color: rgb(86, 43, 128);
   color: white;
   font-family:
     "Open Sans",
     sans-serif;
   padding: 15px;
+  font-size: 20px;
 }
 
 img {
@@ -27,7 +28,7 @@ textarea {
   width: 100%;
 }
 
-button {
+.purple-button {
   background-color: rgb(86, 43, 128);
   color: white;
   font-family:
@@ -36,6 +37,18 @@ button {
   padding: 5px 15px;
   border: unset;
   border-radius: 6px;
+}
+
+.purple-button-2 {
+  background-color: rgb(86, 43, 128);
+  color: white;
+  font-family:
+    "Open Sans",
+    sans-serif;
+  padding: 5px 15px;
+  border: unset;
+  border-radius: 6px;
+  margin: 2vh;
 }
 
 .title-padding {
@@ -72,17 +85,27 @@ button {
   text-align: right;
 }
 
+.just-content-center {
+  justify-content: center;
+}
+
 .button-padding {
   padding-top: 20px;
 }
 
-/* DOM Tree sectioning */
-
-/* .OHW {
-  width: 100%;
-} */
-
 .row-padding {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.header-entries {
+  padding-left: 30px;
+}
+
+.blank-page {
+  justify-content: center;
+}
+
+.content-space {
+  justify-content: space-between;
 }

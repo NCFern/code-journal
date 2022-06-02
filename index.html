@@ -22,15 +22,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="navi-bar">
     <div class="container">
       <div class="column-full">
         Code Journal
+        <span class="header-entries">
+          Entires
+        </span>
       </div>
     </div>
   </header>
   <main>
-    <div data-view="entry-form">
+    <div data-view="entry-form" class="view hidden">
       <form id="new-entry-form">
         <div class="container">
           <div class="row">
@@ -69,7 +72,7 @@
               class="textarea-border textarea-border-style"></textarea>
               <div class="form actions">
                 <div class="align-right button-padding">
-                  <button type="submit">SAVE</button>
+                  <button type="submit" class="purple-button">SAVE</button>
                 </div>
               </div>
             </div>
@@ -80,15 +83,41 @@
 
     <!-- NEW STUFF BELOW -->
 
-    <div data-view="entries">
-      <div class="container">
-        <ul>
+    <div data-view="entries" class="view">
+      <div class="container" id="entries">
+        <div class="row">
+          <div class="column-full">
+            <div class="row content-space">
+              <h2>Entries</h2>
+              <a href="make a new entry" class="purple-button-2" id="anchor">NEW</a>
+            </div>
+            <div class="row just-content-center">
+              <p class="blank-page">No entries have been recorded.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+
+        <!-- <ul>
           <li>
             <div class="row row-padding">
               <div class="column-half">
                 <img class="OHW" src="images/OHW/sclub7.jpeg" alt="sclub7">
               </div>
-              <div class="column-half">
+              <div class="column-2-half">
                 <h2>OHW- Never Had A Dream Come True</h2>
                 <p>Ain't no episode like an S Club episode! How did the UK teen pop smash
                   only manage to break their least interesting hit in America?</p>
@@ -101,7 +130,7 @@
               <div class="column-half">
                 <img class="OHW" src="images/OHW/falco.jpeg" alt="falco">
               </div>
-              <div class="column-half">
+              <div class="column-2-half">
                 <h2>OHW- Rock Me Amadeus</h2>
                 <p>Eine kleine Synthpopmusik...</p>
                 <p>Song came out in 1985.</p>
@@ -113,7 +142,7 @@
               <div class="column-half">
                 <img class="OHW" src="images/OHW/buggles.jpeg" alt="buggles">
               </div>
-              <div class="column-half">
+              <div class="column-2-half">
                 <h2>OHW- Video Killed The Radio Star</h2>
                 <p>The radio star has been KILLED! MTV = MURDER TELEVISION</p>
                 <p>Some came out in 1979.</p>
@@ -125,7 +154,7 @@
               <div class="column-half">
                 <img class="OHW" src="images/OHW/semisonic.webp" alt="semisonic">
               </div>
-              <div class="column-half">
+              <div class="column-2-half">
                 <h2>OHW- Closing Time</h2>
                 <p>Every new beginning comes from some other beginning's end. But
                   whatever happened to Semisonic, the band who dropped some timeless
@@ -133,14 +162,4 @@
                 <p>Song came out in 1998.</p>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+          </li> -->
