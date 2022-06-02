@@ -39,16 +39,8 @@ textarea {
   border-radius: 6px;
 }
 
-.purple-button-2 {
-  background-color: rgb(86, 43, 128);
-  color: white;
-  font-family:
-    "Open Sans",
-    sans-serif;
-  padding: 5px 15px;
-  border: unset;
-  border-radius: 6px;
-  margin: 2vh;
+.padding-top-new-button {
+  padding-top: 50px;
 }
 
 .title-padding {
@@ -85,7 +77,7 @@ textarea {
   text-align: right;
 }
 
-.just-content-center {
+.justify-content-center {
   justify-content: center;
 }
 
@@ -108,4 +100,8 @@ textarea {
 
 .content-space {
   justify-content: space-between;
+}
+
+.adjust {
+  padding-top: 20px;
 }
