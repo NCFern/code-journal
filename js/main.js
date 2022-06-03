@@ -1,10 +1,12 @@
 /* global data */
 
 // create an entry: show image and submit form //
+
 var $form = document.querySelector('#new-entry-form');
 var $showImage = document.querySelector('.photoPreview');
 var $photoURL = document.querySelector('#input-photo');
 
+$photoURL.addEventListener('input', inputImage);
 function inputImage(event) {
   if ($photoURL.value !== '') {
     $showImage.setAttribute('src', $photoURL.value);
@@ -13,8 +15,7 @@ function inputImage(event) {
   }
 }
 
-$photoURL.addEventListener('input', inputImage);
-
+$form.addEventListener('submit', saveForm);
 function saveForm(event) {
   event.preventDefault();
   var entryFull = {
@@ -30,17 +31,16 @@ function saveForm(event) {
 
   // new content- can view new entries//
 
-  // var $selectContainer = document.querySelector('ul');
-  // $selectContainer.prepend(renderEntry(data.entries[0]));
+  var $selectContainer = document.querySelector('ul');
+  $selectContainer.prepend(renderEntry(data.entries[0]));
 
-  // if (data.entries.length === 1) {
-  //   var $showNoRecord = document.querySelector('set-entries');
-  //   $showNoRecord.className = 'hidden';
-  // }
-  // viewEntries();
+  if (data.entries.length === 1) {
+    var $showNoRecord = document.querySelector('.set-entries');
+    $showNoRecord.className = 'hidden';
+  }
+
+  switchViews();
 }
-
-$form.addEventListener('submit', saveForm);
 
 // view an entry: entry to templete //
 
@@ -76,6 +76,7 @@ function renderEntry(entry) {
   return $entryList;
 }
 
+window.addEventListener('loadDomContent', loadDomTree);
 function loadDomTree(event) {
   var $chooseContainer = document.querySelector('.ul');
   for (var i = 0; data.entries.length; i++) {
@@ -84,4 +85,31 @@ function loadDomTree(event) {
   }
 }
 
-window.addEventListener('loadDomContent', loadDomTree);
+// View Switch- click new to go to new entry //
+
+var $view = document.querySelectorAll('.view');
+var $entriesNavigator = document.querySelector('.header-entries');
+var $newButton = document.querySelector('#anchor');
+
+$entriesNavigator.addEventListener('click', switchViews);
+$newButton.addEventListener('click', makeNewEntry);
+
+function switchViews(event) {
+  for (var j = 0; j < $view.length; j++) {
+    if ($view[j].getAttribute('data-view') === 'entry-form') {
+      $view[j].className = 'view hidden';
+    } else if ($view[j].getAttribute('data-view') !== 'entry-form') {
+      $view[j].className = 'view';
+    }
+  }
+}
+
+function makeNewEntry(event) {
+  for (var j = 0; j < $view.length; j++) {
+    if ($view[j].getAttribute('data-view') === 'entry-form') {
+      $view[j].className = 'view';
+    } else if ($view[j].getAttribute('data-view') !== 'entry-form') {
+      $view[j].className = 'view hidden';
+    }
+  }
+}
