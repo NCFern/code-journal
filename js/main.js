@@ -21,7 +21,7 @@ function saveForm(event) {
   var entryFull = {
     entryId: data.nextEntryId,
     title: $form.elements.title.value,
-    photoURL: $form.elements.url.value,
+    imgURL: $form.elements.url.value,
     notes: $form.elements.notes.value
   };
   data.entries.unshift(entryFull);
@@ -55,7 +55,7 @@ function renderEntry(entry) {
   $entryColumn.setAttribute('class', 'column-half');
 
   var $entryImage = document.createElement('img');
-  $entryImage.setAttribute('src', entry.imageURL);
+  $entryImage.setAttribute('src', entry.imgURL);
 
   var $entry2Column = document.createElement('div');
   $entry2Column.setAttribute('class', 'column-2-half');
@@ -64,7 +64,7 @@ function renderEntry(entry) {
   $entryTitle.textContent = entry.title;
 
   var $entryNotes = document.createElement('p');
-  $entryNotes.textContent = entry.Notes;
+  $entryNotes.textContent = entry.notes;
 
   $entryList.appendChild($entryRow);
   $entryRow.appendChild($entryColumn);
