@@ -34,11 +34,10 @@ function saveForm(event) {
   var $selectContainer = document.querySelector('ul');
   $selectContainer.prepend(renderEntry(data.entries[0]));
 
-  if (data.entries.length === 1) {
+  if (data.entries.length !== 0) {
     var $showNoRecord = document.querySelector('.set-entries');
-    $showNoRecord.className = 'hidden';
+    $showNoRecord.classList.add('hidden');
   }
-
   switchViews();
 }
 
