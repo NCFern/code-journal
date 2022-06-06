@@ -57,7 +57,7 @@ function renderEntry(entry) {
   $entryImage.setAttribute('src', entry.imgURL);
 
   var $entry2Column = document.createElement('div');
-  $entry2Column.setAttribute('class', 'column-2-half');
+  $entry2Column.setAttribute('class', 'column-half');
 
   var $entryTitle = document.createElement('h2');
   $entryTitle.textContent = entry.title;
