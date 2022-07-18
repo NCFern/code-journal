@@ -14,3 +14,13 @@ body {
   padding: 15px;
   font-size: 20px;
 }
+
+.placeholder {
+  width: 100%;
+}
+
+#user-notes,
+#user-photo,
+#user-title {
+  width: 100%;
+}
