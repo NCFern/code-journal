@@ -22,85 +22,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navigation-bar">
+  <header class="navi-bar">
     <div class="container">
-      <div class="column-full">
-        Code Journal
-        <span class="header-entries">
-          Entires
-        </span>
-      </div>
+      Code Journal
     </div>
   </header>
   <main>
-    <div data-view="entry-form" class="view hidden">
-      <form id="new-entry-form">
-        <div class="container">
-          <div class="row">
-            <div class="column-full">
-              <h1>New Entry</h1>
-            </div>
-            <div class="column-half">
-              <img class="photoPreview" src="images/placeholder-image-square.jpg" alt="image-placeholder">
-            </div>
-            <div class="column-half">
-              <div class="title-padding">
-                <label for="input-title">Title</label> <br />
-              </div>
-              <input required
-              name="title"
-              type="text"
-              class="input-border input-border-style"
-              id="input-title"> <br />
-              <div class="photo-padding">
-                <label for="input-photo">Photo URL</label> <br />
-              </div>
-              <input required
-              name="url"
-              type="url"
-              class="input-border input-border-style"
-              id="input-photo"> <br />
-            </div>
-            <div class="column-full">
-              <div class="notes-padding">
-                <label for="input-notes">Notes</label> <br />
-              </div>
-              <textarea required
-              rows="7"
-              name="notes"
-              id="input-notes"
-              class="textarea-border textarea-border-style"></textarea>
-              <div class="form actions">
-                <div class="align-right button-padding">
-                  <button type="submit" class="purple-button">SAVE</button>
-                </div>
-              </div>
-            </div>
+    <div class="container">
+      <div data-view="entry-form">
+        <form id="new-form">
+          <h2>New Entry</h2>
+          <label for="title">Title</label>
+          <input required name="title" type="text" id="user-title">
+          <label for="photo">Photo URL</label>
+          <input required name="photo" type="url" id="user-photo">
+          <label for="notes">Message</label>
+          <textarea required rows="5" name="notes" id="user-notes"></textarea>
+          <div class="form-actions">
+            <button type="submit">SAVE</button>
           </div>
-        </div>
-      </form>
-    </div>
 
-    <!-- NEW STUFF BELOW -->
-
-    <div data-view="entries" class="view">
-      <div class="container" id="entries">
-        <div class="row">
-          <div class="column-full">
-            <div class="row content-space height-width">
-              <h2>Entries</h2>
-              <a href="#" class="purple-button" id="anchor" style="height: 35px; margin-top: 20px">NEW</a>
-            </div>
-            <div class="set-entries row justify-content-center">
-              <p class="blank-page adjust">No entries have been recorded.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <ul></ul>
-        </div>
+        </form>
       </div>
     </div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
