@@ -13,8 +13,8 @@ if (previousEntries !== null) {
   data = JSON.parse(previousEntries);
 }
 
-window.addEventListener('beforeUnload', saveEntries);
+window.addEventListener('beforeunload', saveEntries);
 
 function saveEntries(event) {
-  window.localStorage.setItem('previousEntries', JSON.stringify(data));
+  localStorage.setItem('previousEntries', JSON.stringify(data));
 }
