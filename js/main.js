@@ -18,11 +18,14 @@ $form.addEventListener('submit', submitForm);
 
 function submitForm(event) {
   event.preventDefault();
+  var formTitle = document.querySelector('#user-title').value;
+  var formPhoto = document.querySelector('#user-photo').value;
+  var formNotes = document.querySelector('#user-notes').value;
   var submitEntry = {
     entryId: data.nextEntryId,
-    title: $form.elements.title.value,
-    imgURL: $form.elements.photo.value,
-    notes: $form.elements.notes.value
+    title: formTitle,
+    imgURL: formPhoto,
+    notes: formNotes
   };
   data.entries.unshift(submitEntry);
   data.nextEntryId++;
