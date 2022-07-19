@@ -17,6 +17,7 @@ function showPicture(event) {
 $form.addEventListener('submit', submitForm);
 
 function submitForm(event) {
+  console.log('Howdy');
   event.preventDefault();
   var formTitle = document.querySelector('#user-title').value;
   var formPhoto = document.querySelector('#user-photo').value;
